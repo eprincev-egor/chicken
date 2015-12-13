@@ -1,2 +1,2 @@
 # chicken
-for ludum date, http://chicken.jsin.ru
+for ludum dare, http://chicken.jsin.ru
