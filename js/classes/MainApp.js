@@ -143,6 +143,24 @@ define([
 			delete this.keyCodes[e.keyCode];
 			this.onKeyup(e);
 		}.bind(this));
+
+		$(window).on("touchstart", function(e) {
+			var point = f.getMousePoint(e);
+			if ( point.x < this.size.width / 2 ) {
+				this.keyCodes[17] = true;
+			} else {
+				this.keyCodes[32] = true;
+			}
+		}.bind(this));
+
+		$(window).on("touchend", function(e) {
+			var point = f.getMousePoint(e);
+			if ( point.x < this.size.width / 2 ) {
+				delete this.keyCodes[17];
+			} else {
+				delete this.keyCodes[32];
+			}
+		}.bind(this));
 	};
 
 	MainApp.prototype.onKeydown = function(e) {
